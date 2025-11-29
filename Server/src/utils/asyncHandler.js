@@ -1,7 +1,7 @@
 // ASYNCHANDLER USING PROMISES
 
 const asyncHandler = (requestHandler) => {
-  async (req, res, next) => {
+  return async (req, res, next) => {
     Promise
     .resolve(requestHandler(req, res, next))
     .catch((err) => {
@@ -11,7 +11,7 @@ const asyncHandler = (requestHandler) => {
 };
 
 
-export {asyncHandler};
+export { asyncHandler };
 
 
 // ASYNCHANDLER USING TRYCATCH BLOCK
